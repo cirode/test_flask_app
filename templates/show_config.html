@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul>
+    {% for key in config.keys() %}
+      <li>{{key}} : {{config[key]}}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

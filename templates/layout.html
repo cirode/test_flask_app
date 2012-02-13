@@ -1,0 +1,14 @@
+<!doctype html>
+<head>
+  <title>TestFlaskApp</title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/application.css') }}">
+</head>
+<body class=page>
+  <h1>Collected</h1>
+  <div class="metanav">Welcome {{ current_user.username if current_user.is_authenticated() else "Guest" }}
+    {% if current_user.is_authenticated() %}
+      <a id="logout" href="{{url_for('logout')}}">logout</a>
+    {% endif%}
+  </div>
+  {% block body %}{% endblock %}
+</body>
